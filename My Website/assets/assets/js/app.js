@@ -11,15 +11,16 @@ function initNavToggle() {
 
 // ===== Delete confirmation (front-end only, not yet sent to the server) =====
 function initDeleteConfirm() {
-    document.querySelectorAll(".btn-delete").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            const row = btn.closest("tr");
-            const name = row ? row.querySelector("td")?.textContent : "this item";
-            const confirmed = confirm("Are you sure you want to delete \"" + name + "\"?");
-            if (confirmed && row) {
-                row.remove();
-            }
-        });
+    document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".btn-delete");
+        if (!btn) return;
+
+        const row = btn.closest("tr");
+        const name = row ? row.querySelector("td")?.textContent : "this item";
+        const confirmed = confirm("Are you sure you want to delete \"" + name + "\"?");
+        if (confirmed && row) {
+            row.remove();
+        }
     });
 }
 
@@ -115,3 +116,4 @@ document.addEventListener("DOMContentLoaded", function () {
     initTableFilter();
     initFormValidation();
 });
+
