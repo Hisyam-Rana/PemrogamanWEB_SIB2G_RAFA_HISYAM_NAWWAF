@@ -230,7 +230,7 @@ footer {
 /* ===== Responsive Breakpoints ===== */
 
 /* Tablet and below */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     main section:nth-of-type(2) {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -240,15 +240,6 @@ footer {
         main section:nth-of-type(2) {
             grid-template-columns: 1fr;
         }
-    }
-}
-
-/* ===== Responsive Breakpoints ===== */
-
-/* Tablet ke bawah */
-@media (max-width: 768px) {
-    main section:nth-of-type(2) {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -292,4 +283,21 @@ footer {
     form select {
         max-width: 100%;
     }
+}
+
+/* ===== Breakpoint Layar Sangat Lebar (Ultrawide) ===== */
+@media (min-width: 1400px) {
+    main {
+        max-width: 1300px;
+    }
+}
+
+/* ===== Responsive Code / Block Element ===== */
+pre, .code-responsive {
+    overflow-x: auto;
+    max-width: 100%;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 6px;
+    white-space: pre;
 }
